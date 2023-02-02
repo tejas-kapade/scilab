@@ -1,0 +1,19 @@
+f=[2 4 4 2;4 6 8 3;2 8 10 4;3 8 6 2];
+[M N]=size(f);
+const=sqrt(2/N);
+for k=0:1:N-1
+for l=0:1:N-1
+if k==0
+c(k+1,l+1)=1/sqrt(N);
+else
+a=2*l;
+c(k+1,l+1)=const*cos((%pi*k*(a+1))/(2*N)); end
+end
+end
+f1=c*f;
+disp(f1);
+F=c*f*c ';
+disp(c,'Discrete Cosine Transform');
+disp(F,'Discrete Cosine Transform of f(m,n) is');
+subplot(221);imshow(f);title('Image in spatial domain')
+subplot(223);imshow(F);title('Image in frequency domain')
