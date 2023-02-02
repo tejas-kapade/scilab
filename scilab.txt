@@ -1,0 +1,11 @@
+clc;
+N=input('Enter the length of DCT matrix');
+const=sqrt(2/N);
+for k=0:1:N-1
+for l=0:1:N-1
+if k==0 then
+c(k+1,l+1)=sqrt(1/N);
+else
+c(k+1,l+1)=const*cos(((2*l+1)*%pi*k)/(2*N));
+end
+end
